@@ -1,0 +1,33 @@
+{
+  "common": {
+    "levelAlt": "Level",
+    "changeLanguage": "Change language"
+  },
+  "status": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "units": {
+    "years": "years",
+    "months": "months",
+    "days": "days",
+    "hrs": "hrs",
+    "psi": "psi",
+    "°C": "°C",
+    "°F": "°F",
+    "%": "%"
+  },
+  "reasons": {
+    "Pressure Too High": "Pressure Too High",
+    "Temperature Critical": "Temperature Critical"
+  },
+  "tests": {
+    "Safety Test": "Safety Test",
+    "Load Test": "Load Test"
+  },
+  "descriptions": {
+    "Pressure Too High": "System pressure has exceeded safe operating limits. Immediate inspection required.",
+    "Temperature Critical": "Temperature readings are approaching critical threshold. Cooling system may require maintenance."
+  }
+}

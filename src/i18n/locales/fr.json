@@ -1,0 +1,83 @@
+{
+  "common": {
+    "levelAlt": "Niveau",
+    "changeLanguage": "Changer de langue",
+    "dashboard": "Tableau de bord",
+    "digitalTwin": "Jumeau numérique",
+    "system": "Système",
+    "concerns": "Problèmes",
+    "settings": "Paramètres"
+  },
+  "status": {
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible"
+  },
+  "units": {
+    "years": "ans",
+    "months": "mois",
+    "days": "jours",
+    "hrs": "heures",
+    "psi": "psi",
+    "°C": "°C",
+    "°F": "°F",
+    "%": "%",
+    "mg/dL": "mg/dL",
+    "bpm": "bpm",
+    "mmHg": "mmHg"
+  },
+  "reasons": {
+    "Pressure Too High": "Pression trop élevée",
+    "Temperature Critical": "Température critique",
+    "Oxygen Level Low": "Niveau d'oxygène bas",
+    "Battery Warning": "Avertissement de batterie",
+    "Flow Rate Issue": "Problème de débit",
+    "Glucose Levels": "Niveaux de glucose",
+    "Heart Rate": "Fréquence cardiaque",
+    "Blood Pressure": "Pression artérielle",
+    "HDL": "Cholestérol HDL",
+    "LDL": "Cholestérol LDL",
+    "Triglycerides": "Triglycérides",
+    "Blood Sugar": "Glycémie"
+  },
+  "tests": {
+    "Safety Test": "Test de sécurité",
+    "Load Test": "Test de charge",
+    "System Check": "Vérification du système",
+    "Diagnostic": "Diagnostic",
+    "Blood Test": "Analyse de sang",
+    "Stress Test": "Test d'effort",
+    "Physical Exam": "Examen physique",
+    "Periodic Check": "Vérification périodique"
+  },
+  "descriptions": {
+    "Pressure Too High": "La pression du système a dépassé les limites de fonctionnement sécuritaires. Inspection immédiate requise.",
+    "Temperature Critical": "Les relevés de température approchent du seuil critique. Le système de refroidissement peut nécessiter une maintenance.",
+    "Oxygen Level Low": "Le niveau d'oxygène est tombé en dessous du seuil acceptable. Vérifiez les capteurs et l'alimentation.",
+    "Battery Warning": "La batterie fonctionne en dessous de la capacité optimale. Envisagez un remplacement prochainement.",
+    "Flow Rate Issue": "Le débit est irrégulier. Vérifiez les obstructions dans le système.",
+    "Glucose Levels": "Les niveaux de glucose sont en dehors de la plage normale. Ajustement du traitement recommandé.",
+    "Heart Rate": "La fréquence cardiaque présente des irrégularités. Surveillance continue recommandée.",
+    "Blood Pressure": "La pression artérielle est élevée. Consultation médicale recommandée.",
+    "HDL": "Le niveau de bon cholestérol est bas. Recommandation d'améliorer l'alimentation.",
+    "LDL": "Le niveau de mauvais cholestérol est élevé. Suivi médical conseillé."
+  },
+  "widgets": {
+    "age": "Âge du système",
+    "tracker": "Suivi",
+    "concerns": "Problèmes",
+    "system": "Détails du système"
+  },
+  "categories": {
+    "total": "Total",
+    "mechanical": "Mécanique",
+    "electrical": "Électrique",
+    "hydraulic": "Hydraulique",
+    "software": "Logiciel"
+  },
+  "time": {
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "daysAgo": "il y a {{count}} jours"
+  }
+}
