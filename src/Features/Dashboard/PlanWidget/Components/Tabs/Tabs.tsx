@@ -1,5 +1,6 @@
 import styles from "./Tabs.module.scss";
 import Slope from "@assets/PlanWidget/Slope.svg?react";
+import { useTranslation } from "react-i18next";
 
 type Section = {
 	title: string;
@@ -18,6 +19,8 @@ export const Tabs = ({
 	setActiveTab,
 	backgroundColor,
 }: TabsProps) => {
+	const { t } = useTranslation();
+	
 	return (
 		<div
 			className={`${styles["Tabs-container"]} ${backgroundColor === "blue" && styles["Tabs-container-blue"]}`}
@@ -31,7 +34,9 @@ export const Tabs = ({
 					<div className={styles["Tabs-slope-container"]}>
 						<Slope className={styles["Tabs-slope"]} />
 					</div>
-					<div className={styles["Tabs-tab"]}>{section.title}</div>
+					<div className={styles["Tabs-tab"]}>
+						{t(`planWidget.${section.title.toLowerCase()}`, section.title)}
+					</div>
 				</div>
 			))}
 		</div>

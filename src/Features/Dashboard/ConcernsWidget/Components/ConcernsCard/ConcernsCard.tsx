@@ -4,6 +4,7 @@ import Question from "@assets/ConcernsWidget/Question.svg?react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCategory } from "@/App/Redux/categorySlice";
+import { useTranslation } from "react-i18next";
 
 interface ConcernsCardProps {
 	concern: Concern;
@@ -14,6 +15,7 @@ export const ConcernsCard: React.FC<ConcernsCardProps> = ({
 	concern,
 	backgroundColor,
 }) => {
+	const { t } = useTranslation();
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -33,7 +35,7 @@ export const ConcernsCard: React.FC<ConcernsCardProps> = ({
 		>
 			<div className={styles["ConcernsCard-head"]}>
 				<div className={styles["ConcernsCard-icon-container"]}>
-					<img src={concern.icon} alt={`${concern.title} icon`} />
+					<img src={concern.icon} alt={`${t(`concerns.${concern.title}.title`, concern.title)} icon`} />
 				</div>
 				<div
 					className={`${styles["ConcernsCard-status"]} ${
@@ -46,12 +48,14 @@ export const ConcernsCard: React.FC<ConcernsCardProps> = ({
 				>
 					<div className={styles["ConcernsCard-status-exclamation"]}>!</div>
 					<div className={styles["ConcernsCard-status-text"]}>
-						{concern.status}
+						{t(`status.${concern.status.toLowerCase()}`, concern.status)}
 					</div>
 				</div>
 			</div>
 			<div className={styles["ConcernsCard-body"]}>
-				<div className={styles["ConcernsCard-body-title"]}>{concern.title}</div>
+				<div className={styles["ConcernsCard-body-title"]}>
+					{t(`concerns.${concern.title}.title`, concern.title)}
+				</div>
 				<div className={styles["ConcernsCard-body-description"]}>
 					<>
 						<span
@@ -63,10 +67,10 @@ export const ConcernsCard: React.FC<ConcernsCardProps> = ({
 										: styles["ConcernsCard-highlight-green"]
 							}`}
 						>
-							{concern.factors[0]}
+							{t(`factors.${concern.factors[0]}`, concern.factors[0])}
 						</span>
 						{concern.factors.length > 1 && (
-							<span> level and other {concern.factors.length - 1} factors</span>
+							<span> {t('concernsWidget.factorsText', {count: concern.factors.length - 1})}</span>
 						)}
 					</>
 				</div>

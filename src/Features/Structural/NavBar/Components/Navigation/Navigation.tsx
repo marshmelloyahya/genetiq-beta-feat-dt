@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Navigation.module.scss";
+import { useTranslation } from "react-i18next";
 
-// Importing SVGs as React Components
+
 import DashboardIcon from "@assets/Navbar/Icons/Dashboard.svg?react";
 import ReportsIcon from "@assets/Navbar/Icons/Reports.svg?react";
 import GoalsIcon from "@assets/Navbar/Icons/Goals.svg?react";
@@ -12,6 +13,7 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ onClick }) => {
+	const { t } = useTranslation();
 	const [selected, setSelected] = useState<string>("Dashboard");
 
 	const handleClick = (buttonText: string) => {
@@ -23,10 +25,10 @@ const Navigation: React.FC<NavigationProps> = ({ onClick }) => {
 
 	// Buttons array with correct icons
 	const buttons = [
-		{ text: "Dashboard", icon: <DashboardIcon /> },
-		{ text: "Goals", icon: <GoalsIcon /> },
-		{ text: "Reports", icon: <ReportsIcon /> },
-		{ text: "Tests", icon: <TestIcon /> },
+		{ text: "Dashboard", icon: <DashboardIcon />, translationKey: "dashboard" },
+		{ text: "Goals", icon: <GoalsIcon />, translationKey: "goals" },
+		{ text: "Reports", icon: <ReportsIcon />, translationKey: "reports" },
+		{ text: "Tests", icon: <TestIcon />, translationKey: "tests" },
 	];
 
 	return (
@@ -38,8 +40,7 @@ const Navigation: React.FC<NavigationProps> = ({ onClick }) => {
 					onClick={() => handleClick(button.text)}
 				>
 					<span className={styles.icon}>{button.icon}</span>
-
-					{button.text}
+					{t(`navbar.${button.translationKey}`, button.text)}
 				</button>
 			))}
 		</div>

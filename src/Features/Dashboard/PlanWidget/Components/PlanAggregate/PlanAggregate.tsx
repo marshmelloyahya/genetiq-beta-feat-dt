@@ -6,6 +6,7 @@ import Shape from "@assets/PlanWidget/Shape.svg?react";
 import QuestionMark from "@assets/PlanWidget/QuestionMark.svg?react";
 import Document from "@assets/PlanWidget/Document.svg?react";
 import doctor from "@assets/PlanWidget/doctor.png";
+import { useTranslation } from "react-i18next";
 
 type PlanAggregateProps = {
 	section: PlanSection;
@@ -18,6 +19,8 @@ export const PlanAggregate = ({
 	setActiveTab,
 	backgroundColor,
 }: PlanAggregateProps) => {
+	const { t } = useTranslation();
+	
 	const groupedData = section.data.reduce(
 		(acc: { [key: string]: PlanItem[] }, item: PlanItem) => {
 			const group = item.group || "default";
@@ -36,7 +39,7 @@ export const PlanAggregate = ({
 				className={`${styles["PlanAggregate-table"]} ${backgroundColor === "blue" && styles["PlanAggregate-table-blue"]}`}
 			>
 				<div className={styles["PlanAggregate-note"]}>
-					Recommended next steps based on your health data:
+					{t('planWidget.recommendedSteps')}
 				</div>
 				{Object.keys(groupedData)
 					.slice(0, 3)
@@ -47,11 +50,16 @@ export const PlanAggregate = ({
 									{groupedData[groupKey].length}
 								</div>
 								<div className={styles["PlanAggregate-section-title"]}>
-									{groupKey}
+
+
+
+
+									{t(`groups.${groupKey}`, groupKey)}
 								</div>
 								<button
 									className={styles["PlanAggregate-section-arrow"]}
 									onClick={() => setActiveTab(groupKey)}
+									aria-label={t('planWidget.viewSection', { section: groupKey })}
 								>
 									<Arrow />
 								</button>
@@ -63,24 +71,24 @@ export const PlanAggregate = ({
 										<div className={styles["PlanAggregate-row-icon-container"]}>
 											<img
 												src={item.icon}
-												alt={item.name}
+												alt={t(`planItems.${item.name}`, item.name)}
 												className={styles["PlanAggregate-row-icon"]}
 											/>
 										</div>
 										<div className={styles["PlanAggregate-row-name"]}>
-											{item.name}
+											{t(`planItems.${item.name}`, item.name)}
 										</div>
 										<div className={styles["PlanAggregate-row-type"]}>
-											Activity
+											{t('planWidget.activity')}
 										</div>
 										<div className={styles["PlanAggregate-buttons"]}>
 											<div className={styles["PlanAggregate-why"]}>
-												<p>Why</p>
+												<p>{t('planWidget.why')}</p>
 												<QuestionMark />
 											</div>
 
 											<button className={styles["PlanAggregate-cart"]}>
-												<p>Add to Cart</p>
+												<p>{t('planWidget.addToCart')}</p>
 												<Document />
 											</button>
 										</div>
@@ -91,23 +99,22 @@ export const PlanAggregate = ({
 					))}
 			</div>
 
-			<div className={styles["PlanAggregate-or"]}>OR</div>
+			<div className={styles["PlanAggregate-or"]}>{t('planWidget.or')}</div>
 			<div className={styles["PlanAggregate-cta"]}>
 				<div className={styles["PlanAggregate-cta-icon-container"]}>
-					<img src={doctor} alt='Doctor icon' />
+					<img src={doctor} alt={t('planWidget.doctorIcon')} />
 				</div>
 				<div className={styles["PlanAggregate-cta-body"]}>
 					<div className={styles["PlanAggregate-cta-title"]}>
-						Check-in with our Physician first
+						{t('planWidget.checkInWithPhysician')}
 						<Shape className={styles["PlanAggregate-cta-shape"]} />
 					</div>
 					<div className={styles["PlanAggregate-cta-desc"]}>
-						Consult our specialist if you are not sure or concerned about your
-						results.
+						{t('planWidget.consultSpecialist')}
 					</div>
 				</div>
 				<button className={styles["PlanAggregate-cta-button"]}>
-					<p className={styles["PlanAggregate-cta-schedule"]}>Schedule Call</p>
+					<p className={styles["PlanAggregate-cta-schedule"]}>{t('planWidget.scheduleCall')}</p>
 					<div className={styles["PlanAggregate-cta-schedule-icon"]}>
 						<Calendar />
 					</div>

@@ -14,9 +14,11 @@ import { AgeWidget } from "@/Features/Risk/AgeWidget/AgeWidget";
 import { concernsMockData } from "@/Features/Dashboard/ConcernsWidget/helpers/concernsMockData";
 import Slope from "@assets/ConcernsWidget/Slope.svg?react";
 import GoalsProgressMenu from "@/Features/Risk/GoalProgressMenu/GoalProgressMenu";
+import { useTranslation } from "react-i18next";
 
 const SystemOverview = () => {
 	const { systemName } = useParams();
+	const { t } = useTranslation();
 
 	return (
 		<div className={styles["SystemOverview-layout"]}>
@@ -31,14 +33,14 @@ const SystemOverview = () => {
 								<Link to='/dashboard' className={styles["SystemOverview-back"]}>
 									<Home /> /
 								</Link>
-								System Report
+								{t('systemOverview.systemReport', 'System Report')}
 							</div>
 							<div className={styles["SystemOverview-system"]}>
 								<div className={styles["SystemOverview-icon-container"]}>
 									<Heart />
 								</div>
 								<h1 className={styles["SystemOverview-title"]}>
-									{systemName} System Report
+									{systemName} {t('systemOverview.systemReport', 'System Report')}
 								</h1>
 							</div>
 						</div>
@@ -49,13 +51,11 @@ const SystemOverview = () => {
 							<div className={styles["SystemOverview-widget-head"]}>
 								<div className={styles["SystemOverview-widget-title-wrapper"]}>
 									<h4 className={styles["SystemOverview-widget-title"]}>
-										Key areas of concern
+										{t('systemOverview.keyAreasOfConcern', 'Key areas of concern')}
 									</h4>
 								</div>
 								<p className={styles["SystemOverview-widget-desc"]}>
-									Based on the provided data and individual disease
-									recommendations, the patient is at risk for several
-									cardiovascular conditions, including:
+									{t('systemOverview.concernDescription', 'Based on the provided data and individual disease recommendations, the patient is at risk for several cardiovascular conditions, including:')}
 								</p>
 							</div>
 							<div className={styles["SystemOverview-concern-cards"]}>
@@ -71,7 +71,7 @@ const SystemOverview = () => {
 						<div className={styles["SystemOverview-widgets-container"]}>
 							<div className={styles["SystemOverview-tab-container"]}>
 								<div className={styles["SystemOverview-tab"]}>
-									Health insights
+									{t('systemOverview.healthInsights', 'Health insights')}
 								</div>
 								<Slope className={styles["SystemOverview-slope"]} />
 							</div>
@@ -82,14 +82,12 @@ const SystemOverview = () => {
 											className={styles["SystemOverview-widget-title-wrapper"]}
 										>
 											<h4 className={styles["SystemOverview-widget-title"]}>
-												Test results
+												{t('systemOverview.testResults', 'Test results')}
 											</h4>
 											<div className={styles["SystemOverview-counter"]}>8</div>
 										</div>
 										<p className={styles["SystemOverview-widget-desc"]}>
-											The primary concerns are elevated LDL cholesterol levels,
-											slightly below optimal HDL cholesterol, and the need for
-											improved cardiovascular fitness and stress management.
+											{t('systemOverview.testResultsDescription', 'The primary concerns are elevated LDL cholesterol levels, slightly below optimal HDL cholesterol, and the need for improved cardiovascular fitness and stress management.')}
 										</p>
 									</div>
 									<ReasonsTable
@@ -104,14 +102,12 @@ const SystemOverview = () => {
 											className={styles["SystemOverview-widget-title-wrapper"]}
 										>
 											<h4 className={styles["SystemOverview-widget-title"]}>
-												What you can do
+												{t('systemOverview.whatYouCanDo', 'What you can do')}
 											</h4>
 											<div className={styles["SystemOverview-counter"]}>8</div>
 										</div>
 										<p className={styles["SystemOverview-widget-desc"]}>
-											The following comprehensive action plan combines lifestyle
-											changes, monitoring strategies, and supplement
-											recommendations to support overall cardiovascular health.
+											{t('systemOverview.actionPlanDescription', 'The following comprehensive action plan combines lifestyle changes, monitoring strategies, and supplement recommendations to support overall cardiovascular health.')}
 										</p>
 									</div>
 									<PlanWidget

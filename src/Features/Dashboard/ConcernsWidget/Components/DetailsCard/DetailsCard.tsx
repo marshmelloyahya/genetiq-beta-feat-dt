@@ -3,6 +3,7 @@ import { Detail } from "../../helpers/detailedSystemConcerns";
 import styles from "./DetailsCard.module.scss";
 import Check from "@assets/ConcernsWidget/Check.svg?react";
 import Question from "@assets/ConcernsWidget/Question.svg?react";
+import { useTranslation } from "react-i18next";
 
 interface DetailsCardProps {
 	detail: Detail;
@@ -15,6 +16,8 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 	detailIndex,
 	setDetailIndex,
 }) => {
+	const { t } = useTranslation();
+
 	return (
 		<div
 			className={`${styles["DetailsCard-card"]} ${detail.id === detailIndex && styles["DetailsCard-card-active"]}`}
@@ -32,7 +35,7 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 				>
 					<div className={styles["DetailsCard-status-exclamation"]}>!</div>
 					<div className={styles["DetailsCard-status-text"]}>
-						{detail.status}
+						{t(`status.${detail.status.toLowerCase()}`, detail.status)}
 					</div>
 				</div>
 				<label className={styles["DetailsCard-checkbox-container"]}>
@@ -48,7 +51,9 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 				</label>
 			</div>
 			<div className={styles["DetailsCard-body"]}>
-				<div className={styles["DetailsCard-body-title"]}>{detail.title}</div>
+				<div className={styles["DetailsCard-body-title"]}>
+					{t(`details.${detail.title}.title`, detail.title)}
+				</div>
 				<div className={styles["DetailsCard-body-description"]}>
 					<>
 						<span
@@ -60,10 +65,10 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 										: styles["DetailsCard-highlight-green"]
 							}`}
 						>
-							{detail.factors[0]}
+							{t(`factors.${detail.factors[0]}`, detail.factors[0])}
 						</span>
 						{detail.factors.length > 1 && (
-							<span> level and other {detail.factors.length - 1} factors</span>
+							<span> {t('concernsWidget.factorsText', {count: detail.factors.length - 1})}</span>
 						)}
 					</>
 				</div>

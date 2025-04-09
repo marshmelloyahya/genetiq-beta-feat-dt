@@ -5,6 +5,7 @@ import Cardio from "@assets/RiskHeader/CardioLight.svg?react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { RiskChart } from "../RiskChart/RiskChart";
+import { useTranslation } from "react-i18next";
 
 interface RiskHeaderProps {
 	title: string;
@@ -13,6 +14,8 @@ interface RiskHeaderProps {
 
 const RiskHeader: React.FC<RiskHeaderProps> = ({ title, descriptions }) => {
 	const navigate = useNavigate();
+	const { t } = useTranslation();
+	
 	const NavigateSystem = (system: string) => {
 		navigate(`/dashboard/${system}`);
 	};
@@ -43,11 +46,11 @@ const RiskHeader: React.FC<RiskHeaderProps> = ({ title, descriptions }) => {
 						onClick={() => NavigateSystem("cardiovascular")}
 						className={styles["breadcrumb"]}
 					>
-						/ Cardiovascular Disease
+						/ {t('riskHeader.cardiovascularDisease', 'Cardiovascular Disease')}
 					</span>
 
 					<span className={styles["breadcrumb-sub-item"]}>
-						/ Concern report
+						/ {t('riskHeader.concernReport', 'Concern report')}
 					</span>
 				</nav>
 				<h2 className={styles["RiskHeader-layout-title-p"]}>{title}</h2>
@@ -57,22 +60,22 @@ const RiskHeader: React.FC<RiskHeaderProps> = ({ title, descriptions }) => {
 					<div style={{ paddingRight: "4px", display: "flex", height: 16 }}>
 						<Grid style={{ padding: 2 }} />
 					</div>
-					<p className={styles["RiskHeader-category-p"]}>Category</p>
+					<p className={styles["RiskHeader-category-p"]}>{t('riskHeader.category', 'Category')}</p>
 					<p className={styles["RiskHeader-category-val-p"]}>
-						Cardiovascular disorders
+						{t('riskHeader.cardiovascularDisorders', 'Cardiovascular disorders')}
 					</p>
 				</div>
 				<div className={styles["RiskHeader-wrapper"]}>
 					<div style={{ paddingRight: "4px", display: "flex" }}>
 						<Cardio style={{ padding: 2 }} />
 					</div>
-					<p className={styles["RiskHeader-category-p"]}>Key organs</p>
-					<p className={styles["RiskHeader-category-val-p"]}>Heart</p>
+					<p className={styles["RiskHeader-category-p"]}>{t('riskHeader.keyOrgans', 'Key organs')}</p>
+					<p className={styles["RiskHeader-category-val-p"]}>{t('riskHeader.heart', 'Heart')}</p>
 				</div>
 			</div>
 			<div className={styles["RiskHeader-content"]}>
-				{descriptions?.map((desc) => (
-					<div className={styles["RiskHeader-description-p"]}>{desc}</div>
+				{descriptions?.map((desc, index) => (
+					<div key={index} className={styles["RiskHeader-description-p"]}>{desc}</div>
 				))}
 			</div>
 			<RiskChart />

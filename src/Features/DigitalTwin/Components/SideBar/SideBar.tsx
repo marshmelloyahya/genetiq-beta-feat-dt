@@ -19,6 +19,7 @@ import Dropdown from "../../Dropdown/Dropdown";
 import { useDispatch } from "react-redux";
 import { setCategory } from "@/App/Redux/categorySlice";
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 type DropdownValue = "total" | "cardio";
 
@@ -34,6 +35,7 @@ interface SideBarProps {
 }
 
 const SideBar = ({ onModelChange, modelType = "body" }: SideBarProps) => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch();
 
 	const [activeButton, setActiveButton] =
@@ -103,20 +105,20 @@ const SideBar = ({ onModelChange, modelType = "body" }: SideBarProps) => {
 	};
 
 	const buttons = [
-		{ text: "ClinicalNotes", icon: <ClinicalNotesIcon /> },
-		{ text: "CardioLoad", icon: <CardioLoadIcon />, count: 3 },
-		{ text: "StressManagement", icon: <HeadIcon /> },
-		{ text: "Pulmonology", icon: <PulmonologyIcon /> },
-		{ text: "Gastroenterolgy", icon: <GastroenterolgyIcon /> },
-		{ text: "Endocrinology", icon: <EndocrinologyIcon /> },
-		{ text: "Pulmonology1", icon: <Pulmonology1Icon /> },
-		{ text: "Urology", icon: <UrologyIcon /> },
-		{ text: "UlnaRadiusAlt", icon: <UlnaRadiusAltIcon /> },
-		{ text: "Gynecology", icon: <GynecologyIcon /> },
-		{ text: "Hematology", icon: <HematologyIcon /> },
-		{ text: "Nephrology", icon: <NephrologyIcon /> },
-		{ text: "Alergy", icon: <AlergyIcon /> },
-		{ text: "OxygenSaturation", icon: <OxygenSaturationIcon /> },
+		{ text: "ClinicalNotes", icon: <ClinicalNotesIcon />, translationKey: "clinicalNotes" },
+		{ text: "CardioLoad", icon: <CardioLoadIcon />, count: 3, translationKey: "cardioLoad" },
+		{ text: "StressManagement", icon: <HeadIcon />, translationKey: "stressManagement" },
+		{ text: "Pulmonology", icon: <PulmonologyIcon />, translationKey: "pulmonology" },
+		{ text: "Gastroenterolgy", icon: <GastroenterolgyIcon />, translationKey: "gastroenterology" },
+		{ text: "Endocrinology", icon: <EndocrinologyIcon />, translationKey: "endocrinology" },
+		{ text: "Pulmonology1", icon: <Pulmonology1Icon />, translationKey: "pulmonology1" },
+		{ text: "Urology", icon: <UrologyIcon />, translationKey: "urology" },
+		{ text: "UlnaRadiusAlt", icon: <UlnaRadiusAltIcon />, translationKey: "ulnaRadiusAlt" },
+		{ text: "Gynecology", icon: <GynecologyIcon />, translationKey: "gynecology" },
+		{ text: "Hematology", icon: <HematologyIcon />, translationKey: "hematology" },
+		{ text: "Nephrology", icon: <NephrologyIcon />, translationKey: "nephrology" },
+		{ text: "Alergy", icon: <AlergyIcon />, translationKey: "allergy" },
+		{ text: "OxygenSaturation", icon: <OxygenSaturationIcon />, translationKey: "oxygenSaturation" },
 	];
 
 	return (
@@ -139,6 +141,7 @@ const SideBar = ({ onModelChange, modelType = "body" }: SideBarProps) => {
 					}}
 					active={activeButton === data.text}
 					disabled={index > 1}
+					aria-label={t(`sidebar.${data.translationKey}`, data.text)}
 				>
 					{data.count && (
 						<span className={styles["SideBar-count"]}>{data.count}</span>

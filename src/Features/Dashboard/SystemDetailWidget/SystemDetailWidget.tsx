@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "@/App/Redux/store";
+import { useTranslation } from 'react-i18next';
 
 interface SystemDetailWidgetProps {
 	category: string;
@@ -13,14 +14,16 @@ interface SystemDetailWidgetProps {
 export const SystemDetailWidget: React.FC<SystemDetailWidgetProps> = ({
 	category,
 }) => {
+	const { t } = useTranslation();
 	const [detail, setDetail] = useState({
 		title: "",
-		description: "No details available.",
+		description: t('systemDetailWidget.noDetailsAvailable'),
 	});
 	const navigate = useNavigate();
 	const selectedCategory = useSelector(
 		(state: RootState) => state.category.selectedCategory,
 	);
+	
 	useEffect(() => {
 		console.log(category);
 		if (category !== "total") {
@@ -31,10 +34,10 @@ export const SystemDetailWidget: React.FC<SystemDetailWidgetProps> = ({
 	const ViewReport = () => {
 		navigate(`/dashboard/${selectedCategory}`);
 	};
+	
 	return (
 		<div
 			className={`${styles["SystemDetailWidget-container"]} ${category === "total" && styles["SystemDetailWidget-container-hidden"]}`}
-			// onAnimationStart={handleAnimationStart}
 		>
 			<div className={styles["SystemDetailWidget-head"]}>
 				<h3 className={styles["SystemDetailWidget-title"]}>{detail.title}</h3>
@@ -43,7 +46,7 @@ export const SystemDetailWidget: React.FC<SystemDetailWidgetProps> = ({
 						className={styles["SystemDetailWidget-report-text"]}
 						onClick={ViewReport}
 					>
-						View report
+						{t('systemDetailWidget.viewReport')}
 						<Report />
 					</button>
 				</div>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import NavBar from "@/Features/Structural/NavBar/Navbar";
 import styles from "./Dashboard.module.scss";
@@ -12,10 +11,11 @@ import { SystemDetailWidget } from "@/Features/Dashboard/SystemDetailWidget/Syst
 import { useSelector } from "react-redux";
 import LanguageSwitcher from "@/Features/Structural/LanguageSwitcher/LanguageSwitcher";
 import ThemeSwitcher from "@/Features/Structural/ThemeSwitcher/ThemeSwitcher";
-
 import { RootState } from "@/App/Redux/store";
+import { useTranslation } from 'react-i18next';
 
 const Dashboard = () => {
+	const { t } = useTranslation();
 	const [isNotFirstAnimation, setIsNotFirstAnimation] = useState(false);
 	const selectedCategory = useSelector(
 		(state: RootState) => state.category.selectedCategory,

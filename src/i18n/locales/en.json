@@ -1,33 +1,279 @@
 {
+  "trackerWidget": {
+    "checking": "Stay tuned. We are checking your",
+    "cholesterol": "Cholesterol",
+    "resultsExpected": "results expected in",
+    "days": "5 days",
+    "someTitle": "Title in English",
+    "someDescription": "Description in English"
+  },
+
+
+
+ 
+  "planItems": {
+    "Mediterranean Diet": "Mediterranean Diet",
+    "DASH Diet": "DASH Diet",
+    "Regular Exercise": "Regular Exercise",
+    "Stress Management": "Stress Management",
+    "Sleep Optimization": "Sleep Optimization",
+    "Fish Oil": "Fish Oil",
+    "CoQ10": "CoQ10",
+    "Vitamin D": "Vitamin D",
+    "Magnesium": "Magnesium",
+    "BP Monitoring": "BP Monitoring",
+    "ECG Monitoring": "ECG Monitoring",
+    "Cholesterol Test": "Cholesterol Test"
+
+
+
+  },
+
+
+"systemOverview": {
+    "systemReport": "System Report",
+    "keyAreasOfConcern": "Key areas of concernx",
+    "concernDescription": "Based on the provided data and individual disease recommendations, the patient is at risk for several cardiovascular conditions, including:",
+    "healthInsights": "Health insights",
+    "testResults": "Test results",
+    "testResultsDescription": "The primary concerns are elevated LDL cholesterol levels, slightly below optimal HDL cholesterol, and the need for improved cardiovascular fitness and stress management.",
+    "whatYouCanDo": "What you can do",
+    "actionPlanDescription": "The following comprehensive action plan combines lifestyle changes, monitoring strategies, and supplement recommendations to support overall cardiovascular health."
+
+
+
+  },
+
+
+"detailedRisk": {
+    "ageHealthTitle": "What your age tells about your health",
+    "ageHealthDescription": "A younger cardiovascular age can indicate better heart health and potentially lower your risk of complications from AFib, making it essential to focus on heart health measures tailored to your condition.",
+    "whatYouCanDo": "What you can do"
+  },
+
+
+
+
+
+
+  "riskStatus": {
+    "concern": "You have a",
+    "developingCondition": "concern of developing Atrial Fibrillation"
+  },
+  "riskSlider": {
+    "low": "Low",
+    "intermediate": "Intermediate", 
+    "high": "High"
+  },
+  "riskHeader": {
+    "cardiovascularDisease": "Cardiovascular Disease",
+    "concernReport": "Concern report",
+    "category": "Category",
+    "cardiovascularDisorders": "Cardiovascular disorders",
+    "keyOrgans": "Key organs",
+    "heart": "Heart"
+  },
+  "riskChart": {
+    "concern": "Concern"
+  },
+  "aggregate": {
+    "recommendedSteps": "Recommended next steps based on your health data:",
+    "activity": "Activity",
+    "or": "OR",
+    "checkInWithPhysician": "Check-in with our Physician first",
+    "consultSpecialist": "Consult our specialist if you are not sure or concerned about your results.",
+    "doctorIconAlt": "Doctor icon"
+  },
+  "navbar": {
+    "dashboard": "Dashboard",
+    "goals": "Goals",
+    "reports": "Reports",
+    "tests": "Tests",
+    "manageData": "Manage data",
+    "notifications": "Notifications",
+    "profile": "Profile"
+  },
+  "onboarding": {
+    "appLogo": "{{app}} logo",
+    "comingSoon": "Coming soon"
+  },
+  "apps": {
+    "EHRs Database": "EHRs Database",
+    "ehrsDescription": "Digital health records",
+    "Omron": "Omron",
+    "omronDescription": "Platinum / Evolv / Complete",
+    "Apple": "Apple",
+    "appleDescription": "Watch Series / Ultra / SE / Nike",
+    "Qardio": "Qardio",
+    "qardioDescription": "QardioBase, QardioCore, QardioArm",
+    "Huawei": "Huawei",
+    "huaweiDescription": "Watch GT 5, Band 8, Scale 3",
+    "OURA": "OURA",
+    "ouraDescription": "Ring Gen 2, Ring Gen 3",
+    "FreeStyle": "FreeStyle",
+    "freeStyleDescription": "Libre2 / 3 (Glucose Monitor)",
+    "Withings": "Withings",
+    "withingsDescription": "Body+, BPM Core, Sleep Analyzer"
+  },
+  "filters": {
+    "all": "All",
+    "glucosemonitors": "Glucose Monitors",
+    "wearables": "Wearables",
+    "smartscales": "Smart Scales",
+    "bloodpressuremonitors": "Blood Pressure Monitors",
+    "sleeptrackers": "Sleep Trackers"
+  },
+  "navigation": {
+    "back": "Back",
+    "proceedToDigitalTwin": "Proceed to Digital twin",
+    "submitMyHealthData": "Submit My Health Data"
+  },
+  "sidebar": {
+    "totalHealth": "Total Health",
+    "cardiovascular": "Cardiovascular",
+    "clinicalNotes": "Clinical Notes",
+    "cardioLoad": "Cardio Load",
+    "stressManagement": "Stress Management",
+    "pulmonology": "Pulmonology",
+    "gastroenterology": "Gastroenterology",
+    "endocrinology": "Endocrinology",
+    "pulmonology1": "Respiratory System",
+    "urology": "Urology",
+    "ulnaRadiusAlt": "Musculoskeletal",
+    "gynecology": "Gynecology",
+    "hematology": "Hematology",
+    "nephrology": "Nephrology",
+    "allergy": "Allergy",
+    "oxygenSaturation": "Oxygen Saturation",
+    "option2": "Option 2",
+    "option3": "Option 3",
+    "option4": "Option 4"
+  },
+  "concernsWidget": {
+    "keyAreasOfConcern": "Key Areas of Concern",
+    "showLess": "Show Less",
+    "showAll": "Show all",
+    "factorsText": "level and other {{count}} factors",
+    "howWeKnow": "How we know this",
+    "showMore": "Show {{count}} more",
+    "symptoms": "Symptoms"
+  },
+  "connectWatchWidget": {
+    "findHealthData": "Find your health data in one place",
+    "connectToAppleHealth": "Connect to Apple Health"
+  },
+  "ctaModal": {
+    "newInsights": "New insights",
+    "discoverHealthInsights": "Discover new health insights to better understand and enhance your wellness.",
+    "orderDnaTest": "Order DNA Test"
+  },
+  "cta": {
+    "viewMore": "View more",
+    "title": "Recommended Supplements",
+    "whatIsThisFor": "What is this for?",
+    "description": "Based on your health data, we recommend supplements to support your cardiovascular health.",
+    "personImageAlt": "Person image"
+  },
+  "iconAlt": "Supplement icon",
+  "items": {
+    "Omega-3": "Omega-3",
+    "Vitamin D": "Vitamin D",
+    "Magnesium": "Magnesium",
+    "CoQ10": "CoQ10"
+  },
+  "planWidget": {
+    "actionPlan": "Action Plan",
+    "nutrition": "Nutrition",
+    "lifestyle": "Lifestyle",
+    "supplements": "Supplements",
+    "recommendedSteps": "Recommended next steps based on your health data:",
+    "activity": "Activity",
+    "why": "Why",
+    "addToCart": "Add to Cart",
+    "or": "OR",
+    "doctorIcon": "Doctor icon",
+    "checkInWithPhysician": "Check-in with our Physician first",
+    "consultSpecialist": "Consult our specialist if you are not sure or concerned about your results.",
+    "scheduleCall": "Schedule Call",
+    "whatIsThisFor": "What is this for?",
+    "personImage": "Person image",
+    "viewSection": "View {{section}} section"
+  },
+  "groups": {
+    "Supplements": "Supplements",
+    "Medications": "Medications",
+    "Activities": "Activities",
+    "default": "General"
+  },
+  "systemDetailWidget": {
+    "noDetailsAvailable": "No details available.",
+    "viewReport": "View report"
+  },
+  "ageWidget": {
+    "biologicalAge": "Biological Age",
+    "chronologicalAge": "Chronological Age",
+    "years": "yrs",
+    "you": "You"
+  },
+  "stepWidget": {
+    "analyze": "Analyze",
+    "analyzeDescription": "We analyze your health data",
+    "discover": "Discover",
+    "discoverDescription": "Discover your health insights",
+    "optimize": "Optimize",
+    "optimizeDescription": "Get personalized recommendations"
+  },
   "common": {
-    "levelAlt": "Level",
-    "changeLanguage": "Change language"
-  },
-  "status": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
-  },
-  "units": {
-    "years": "years",
-    "months": "months",
-    "days": "days",
-    "hrs": "hrs",
-    "psi": "psi",
-    "°C": "°C",
-    "°F": "°F",
-    "%": "%"
-  },
-  "reasons": {
-    "Pressure Too High": "Pressure Too High",
-    "Temperature Critical": "Temperature Critical"
-  },
-  "tests": {
-    "Safety Test": "Safety Test",
-    "Load Test": "Load Test"
+    "loading": "Loading...",
+    "viewMore": "View more",
+    "viewLess": "Show less",
+    "levelAlt": "Level indicator",
+    "divider": "/",
+    "dayAbbreviations": {
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S",
+      "sunday": "S"
+    },
+    "collapse": "Collapse",
+    "expand": "Expand"
   },
   "descriptions": {
-    "Pressure Too High": "System pressure has exceeded safe operating limits. Immediate inspection required.",
-    "Temperature Critical": "Temperature readings are approaching critical threshold. Cooling system may require maintenance."
+    "VLDL": "VLDL stands for very low-density lipoprotein, a type of fat in your blood that can contribute to plaque buildup in your arteries.",
+    "LDL": "LDL (low-density lipoprotein) is often called 'bad' cholesterol because it delivers cholesterol to tissues and can build up in your artery walls.",
+    "HDL": "HDL (high-density lipoprotein) is known as 'good' cholesterol because it helps remove other forms of cholesterol from your bloodstream."
+  },
+  "goalProgressMenu": {
+    "todaysGoals": "Today's Goals",
+    "editGoals": "Edit Goals"
+  },
+  "goals": {
+    "1": {
+      "text": "Eat 3 vegetables and 2 fruits",
+      "stats": "3 / 5"
+    },
+    "2": {
+      "text": "Walk 10,000 steps",
+      "stats": "5,468 / 10,000"
+    },
+    "3": {
+      "text": "Meditate for 10 minutes",
+      "stats": "0 / 10 min"
+    },
+    "4": {
+      "text": "Drink 8 glasses of water",
+      "stats": "4 / 8"
+    },
+    "5": {
+      "text": "Sleep 8 hours",
+      "stats": "6.5 / 8 hrs"
+    },
+    "6": {
+      "text": "Exercise for 30 minutes",
+      "stats": "0 / 30 min"
+    }
   }
 }

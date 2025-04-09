@@ -11,8 +11,16 @@
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"preview": "vite preview",
-		"prepare": "husky"
+		"prepare": "husky",
+
+ "extract-translations": "i18next-parser"
+
+
 	},
+
+
+
+
 	"dependencies": {
 		"@react-three/drei": "^9.121.0",
 		"@react-three/fiber": "^8.17.12",
@@ -53,6 +61,7 @@
 		"eslint-plugin-react-refresh": "^0.4.16",
 		"globals": "^15.14.0",
 		"husky": "^9.1.7",
+		"i18next-scanner": "^4.6.0",
 		"prettier": "^3.4.2",
 		"sass": "^1.83.1",
 		"typescript": "~5.6.2",

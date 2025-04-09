@@ -1,6 +1,7 @@
 import React from "react";
 import { StepItem } from "@/App/Types";
 import styles from "./StepWidget.module.scss";
+import { useTranslation } from 'react-i18next';
 
 interface StepWidgetProps {
 	items: StepItem[];
@@ -8,6 +9,8 @@ interface StepWidgetProps {
 }
 
 export const StepWidget: React.FC<StepWidgetProps> = ({ items, current }) => {
+	const { t } = useTranslation();
+	
 	return (
 		<div className={styles["step-widget"]}>
 			{items.map((item, index) => (
@@ -19,9 +22,9 @@ export const StepWidget: React.FC<StepWidgetProps> = ({ items, current }) => {
 							{item.icon}
 						</div>
 						<div className={styles["step-title"]}>
-							<span>{item.title}</span>
+							<span>{t(`stepWidget.${item.title}`)}</span>
 							<div className={styles["step-description"]}>
-								{item.description}
+								{t(`stepWidget.${item.description}`)}
 							</div>
 						</div>
 						<div className={styles["step-line"]}></div>

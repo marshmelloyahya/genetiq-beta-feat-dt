@@ -4,6 +4,7 @@ import { Tabs } from "./Components/Tabs/Tabs";
 import { PlanTable } from "./Components/PlanTable/PlanTable";
 import { PlanAggregate } from "./Components/PlanAggregate/PlanAggregate";
 import { PlanSection } from "./helpers/planMockData";
+import { useTranslation } from 'react-i18next';
 
 interface PlanWidgetProps {
 	backgroundColor: string;
@@ -11,12 +12,13 @@ interface PlanWidgetProps {
 }
 
 export const PlanWidget = ({ backgroundColor, planData }: PlanWidgetProps) => {
+	const { t } = useTranslation();
 	const [activeTab, setActiveTab] = useState(planData[0].title);
 	const [transitioning, setTransitioning] = useState(false);
 
 	const getActionPlanData = () => {
 		return planData
-			.filter((section) => section.title !== "Action Plan")
+			.filter((section) => section.title !== t('planWidget.actionPlan'))
 			.flatMap((section) =>
 				section.data.map((item) => ({
 					...item,
@@ -26,7 +28,7 @@ export const PlanWidget = ({ backgroundColor, planData }: PlanWidgetProps) => {
 	};
 
 	const enrichedPlanMockData = planData.map((section) =>
-		section.title === "Action Plan"
+		section.title === t('planWidget.actionPlan')
 			? { ...section, data: getActionPlanData() }
 			: section,
 	);
@@ -51,7 +53,7 @@ export const PlanWidget = ({ backgroundColor, planData }: PlanWidgetProps) => {
 				backgroundColor={backgroundColor}
 			/>
 			<div className={styles["PlanWidget-content"]}>
-				{activeTab === "Action Plan" && activeSection ? (
+				{activeTab === t('planWidget.actionPlan') && activeSection ? (
 					<PlanAggregate
 						section={activeSection}
 						setActiveTab={setActiveTab}

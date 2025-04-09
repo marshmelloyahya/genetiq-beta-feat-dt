@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
 import "./GoalProgressMenu.scss";
 import ProgressRing from "@features/Risk/GoalProgressMenu/ProgressRing.tsx";
 import initialGoals from "@features/Risk/GoalProgressMenu/InitialGoals.tsx";
+import { useTranslation } from "react-i18next";
 
 const PyramidIcon = ({
 	className,
@@ -25,7 +27,9 @@ const PyramidIcon = ({
 		</svg>
 	);
 };
+
 const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
+	const { t } = useTranslation();
 	const daysOfWeek = [
 		"Monday",
 		"Tuesday",
@@ -54,25 +58,6 @@ const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
 		daysOfWeek[new Date().getDay() - 1] || "Monday",
 	);
 
-	// const handleCheckboxChange = (index: number) => {
-	// 	if (!activeDay) return;
-	//
-	// 	setGoalsState((prevGoalsState) => {
-	// 		const updatedGoalsState = {
-	// 			...prevGoalsState,
-	// 			[activeDay]: [...prevGoalsState[activeDay]],
-	// 		};
-	// 		updatedGoalsState[activeDay][index] =
-	// 			!updatedGoalsState[activeDay][index];
-	//
-	// 		const completedCount = updatedGoalsState[activeDay].filter(
-	// 			(goal) => goal,
-	// 		).length;
-	// 		setCurrentProgress(completedCount);
-	//
-	// 		return updatedGoalsState;
-	// 	});
-	// };
 	const calculateProgressPercentage = (day: string) => {
 		const completed = goalsState[day].filter((g) => g).length;
 		const total = goalsState[day].length;
@@ -102,7 +87,7 @@ const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
 						fill='#515967'
 					/>
 				</svg>
-				<span className='label'>Today's goals</span>
+				<span className='label'>{t('goalProgressMenu.todaysGoals')}</span>
 				<div className='progress-wrapper'>
 					<div className='progress-container'>
 						<div
@@ -153,7 +138,7 @@ const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
 												hasCheckedGoals={hasCheckedGoals}
 												isActive={activeDay === day}
 											/>
-											{day.slice(0, 3)}
+											{t(`common.dayAbbreviations.${day.toLowerCase()}`)}
 										</div>
 									</button>
 									{day === "Sunday" && (
@@ -179,14 +164,9 @@ const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
 					{activeDay &&
 						initialGoals.map((goal) => (
 							<div key={goal.id} className='goal-item'>
-								{/*<input*/}
-								{/*	type='checkbox'*/}
-								{/*	checked={goalsState[activeDay][index]}*/}
-								{/*	onChange={() => handleCheckboxChange(index)}*/}
-								{/*/>*/}
 								<div className='goal-content'>
 									{goal.icon}
-									<span className='goal-text'>{goal.text}</span>
+									<span className='goal-text'>{t(`goals.${goal.id}.text`)}</span>
 
 									{goal.id === 3 ? (
 										goal.stats
@@ -198,7 +178,7 @@ const GoalsProgressMenu = ({ totalGoals = 6, completedGoals = 1 }) => {
 						))}
 
 					<div className='edit-goals'>
-						<span>Edit goals</span>
+						<span>{t('goalProgressMenu.editGoals')}</span>
 						<svg
 							width='16'
 							height='16'

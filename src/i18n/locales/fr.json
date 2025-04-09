@@ -1,83 +1,289 @@
 {
-  "common": {
-    "levelAlt": "Niveau",
-    "changeLanguage": "Changer de langue",
+  "trackerWidget": {
+    "checking": "Restez à l'écoute. Nous vérifions votre",
+    "cholesterol": "Cholestérol",
+    "resultsExpected": "résultats attendus dans",
+    "days": "5 jours",
+    "someTitle": "Titre en français",
+    "someDescription": "Description en français"
+  },
+
+"systemOverview": {
+    "systemReport": "Rapport du système",
+    "keyAreasOfConcern": "Domaines clés de préoccupation",
+    "concernDescription": "Sur la base des données fournies et des recommandations individuelles en matière de maladies, le patient est exposé à plusieurs affections cardiovasculaires, notamment :",
+    "healthInsights": "Informations sur la santé",
+    "testResults": "Résultats des tests",
+    "testResultsDescription": "Les principales préoccupations sont les taux élevés de cholestérol LDL, un taux de cholestérol HDL légèrement inférieur à l'optimal, et la nécessité d'améliorer la forme cardiovasculaire et la gestion du stress.",
+    "whatYouCanDo": "Ce que vous pouvez faire",
+    "actionPlanDescription": "Le plan d'action complet suivant combine des changements de mode de vie, des stratégies de surveillance et des recommandations de suppléments pour soutenir la santé cardiovasculaire globale."
+
+ },
+
+
+ "detailedRisk": {
+    "ageHealthTitle": "Ce que votre âge révèle sur votre santé",
+    "ageHealthDescription": "Un âge cardiovasculaire plus jeune peut indiquer une meilleure santé cardiaque et potentiellement réduire votre risque de complications liées à la fibrillation auriculaire, ce qui rend essentiel de se concentrer sur des mesures de santé cardiaque adaptées à votre condition.",
+    "whatYouCanDo": "Ce que vous pouvez faire"
+
+
+ },
+
+
+
+
+
+
+
+"planItems": {
+    "Mediterranean Diet": "Régime méditerranéen",
+    "DASH Diet": "Régime DASH",
+    "Regular Exercise": "Exercice régulier",
+    "Stress Management": "Gestion du stress",
+    "Sleep Optimization": "Optimisation du sommeil",
+    "Fish Oil": "Huile de poisson",
+    "CoQ10": "CoQ10",
+    "Vitamin D": "Vitamine D",
+    "Magnesium": "Magnésium",
+    "BP Monitoring": "Surveillance de la tension artérielle",
+    "ECG Monitoring": "Surveillance ECG",
+    "Cholesterol Test": "Test de cholestérol"
+
+
+ },
+
+
+
+
+
+
+
+  "riskSlider": {
+    "low": "Faible",
+    "intermediate": "Intermédiaire",
+    "high": "Élevé"
+  },
+  "riskStatus": {
+    "concern": "Vous avez une",
+    "developingCondition": "préoccupation de développer une fibrillation auriculaire"
+  },
+  "riskHeader": {
+    "cardiovascularDisease": "Maladie cardiovasculaire",
+    "concernReport": "Rapport de préoccupation",
+    "category": "Catégorie",
+    "cardiovascularDisorders": "Troubles cardiovasculaires",
+    "keyOrgans": "Organes clés",
+    "heart": "Cœur"
+  },
+  "riskChart": {
+    "concern": "Préoccupation"
+  },
+  "navbar": {
     "dashboard": "Tableau de bord",
-    "digitalTwin": "Jumeau numérique",
-    "system": "Système",
-    "concerns": "Problèmes",
-    "settings": "Paramètres"
+    "goals": "Objectifs",
+    "reports": "Rapports",
+    "tests": "Tests",
+    "manageData": "Gérer les données",
+    "notifications": "Notifications",
+    "profile": "Profil"
+  },
+  "filters": {
+    "all": "Tous",
+    "glucosemonitors": "Moniteurs de glucose",
+    "wearables": "Objets connectés",
+    "smartscales": "Balances intelligentes",
+    "bloodpressuremonitors": "Tensiomètres",
+    "sleeptrackers": "Trackers de sommeil"
+  },
+  "navigation": {
+    "back": "Retour",
+    "proceedToDigitalTwin": "Accéder au jumeau numérique",
+    "submitMyHealthData": "Soumettre mes données de santé"
+  },
+  "apps": {
+    "EHRs Database": "Base de données DSE",
+    "ehrsDescription": "Dossiers de santé numériques",
+    "Omron": "Omron",
+    "omronDescription": "Platinum / Evolv / Complete",
+    "Apple": "Apple",
+    "appleDescription": "Watch Series / Ultra / SE / Nike",
+    "Qardio": "Qardio",
+    "qardioDescription": "QardioBase, QardioCore, QardioArm",
+    "Huawei": "Huawei",
+    "huaweiDescription": "Watch GT 5, Band 8, Scale 3",
+    "OURA": "OURA",
+    "ouraDescription": "Bague Gen 2, Bague Gen 3",
+    "FreeStyle": "FreeStyle",
+    "freeStyleDescription": "Libre2 / 3 (Moniteur de glucose)",
+    "Withings": "Withings",
+    "withingsDescription": "Body+, BPM Core, Sleep Analyzer"
+  },
+  "onboarding": {
+    "appLogo": "Logo {{app}}",
+    "comingSoon": "Bientôt disponible"
+  },
+  "sidebar": {
+    "totalHealth": "Santé Globale",
+    "cardiovascular": "Cardiovasculaire",
+    "clinicalNotes": "Notes Cliniques",
+    "cardioLoad": "Charge Cardiaque",
+    "stressManagement": "Gestion du Stress",
+    "pulmonology": "Pneumologie",
+    "gastroenterology": "Gastroentérologie",
+    "endocrinology": "Endocrinologie",
+    "pulmonology1": "Système Respiratoire",
+    "urology": "Urologie",
+    "ulnaRadiusAlt": "Musculo-squelettique",
+    "gynecology": "Gynécologie",
+    "hematology": "Hématologie",
+    "nephrology": "Néphrologie",
+    "allergy": "Allergie",
+    "oxygenSaturation": "Saturation en Oxygène",
+    "option2": "Option 2",
+    "option3": "Option 3",
+    "option4": "Option 4"
+  },
+  "concernsWidget": {
+    "keyAreasOfConcern": "Domaines clés de préoccupation",
+    "showLess": "Voir moins",
+    "showAll": "Voir tout",
+    "factorsText": "niveau et {{count}} autres facteurs",
+    "howWeKnow": "Comment nous le savons",
+
+    "showMore": "Montrer {{count}} plus",
+    "symptoms": "Symptômes"
   },
   "status": {
     "high": "Élevé",
     "medium": "Moyen",
     "low": "Faible"
   },
-  "units": {
+  "connectWatchWidget": {
+    "findHealthData": "Retrouvez vos données de santé en un seul endroit",
+    "connectToAppleHealth": "Connecter à Apple Health"
+  },
+  "ctaModal": {
+    "newInsights": "Nouvelles informations",
+    "discoverHealthInsights": "Découvrez de nouvelles informations sur la santé pour mieux comprendre et améliorer votre bien-être.",
+    "orderDnaTest": "Commander un test ADN"
+  },
+  "planWidget": {
+    "ActionPlan": "Plan d'action",
+    "nutrition": "Nutrition",
+    "lifestyle": "Mode de vie",
+    "supplements": "Suppléments",
+    "followUpCare": "Suivi médical",
+    "medications": "Médicaments",
+    "recommendedSteps": "Étapes suivantes recommandées basées sur vos données de santé:",
+    "activity": "Activité",
+    "why": "Pourquoi",
+    "addToCart": "Ajouter au panier",
+    "or": "OU",
+    "doctorIcon": "Icône du médecin",
+    "checkInWithPhysician": "Consultez d'abord notre médecin",
+    "consultSpecialist": "Consultez notre spécialiste si vous n'êtes pas sûr ou préoccupé par vos résultats.",
+    "scheduleCall": "Planifier un appel",
+    "whatIsThisFor": "À quoi ça sert?",
+    "personImage": "Image de personne",
+    "viewSection": "Voir la section {{section}}"
+  },
+  "aggregate": {
+    "recommendedSteps": "Prochaines étapes recommandées basées sur vos données de santé :",
+    "activity": "Activité",
+    "or": "OU",
+    "checkInWithPhysician": "Consultez d'abord notre médecin",
+    "consultSpecialist": "Consultez notre spécialiste si vous n'êtes pas sûr ou préoccupé par vos résultats.",
+    "doctorIconAlt": "Icône de médecin"
+  },
+  "cta": {
+    "viewMore": "Voir plus",
+    "title": "Suppléments recommandés",
+    "whatIsThisFor": "À quoi ça sert ?",
+    "description": "D'après vos données de santé, nous recommandons des suppléments pour soutenir votre santé cardiovasculaire.",
+    "personImageAlt": "Image de personne"
+  },
+  "iconAlt": "Icône de supplément",
+  "items": {
+    "Omega-3": "Oméga-3",
+    "Vitamin D": "Vitamine D",
+    "Magnesium": "Magnésium",
+    "CoQ10": "CoQ10"
+  },
+  "groups": {
+    "Supplements": "Suppléments",
+    "Medications": "Médicaments",
+    "Activities": "Activités",
+    "default": "Général"
+  },
+  "systemDetailWidget": {
+    "noDetailsAvailable": "Aucun détail disponible.",
+    "viewReport": "Voir le rapport"
+  },
+  "ageWidget": {
+    "biologicalAge": "Âge biologique",
+    "chronologicalAge": "Âge chronologique",
     "years": "ans",
-    "months": "mois",
-    "days": "jours",
-    "hrs": "heures",
-    "psi": "psi",
-    "°C": "°C",
-    "°F": "°F",
-    "%": "%",
-    "mg/dL": "mg/dL",
-    "bpm": "bpm",
-    "mmHg": "mmHg"
+    "you": "Vous"
   },
-  "reasons": {
-    "Pressure Too High": "Pression trop élevée",
-    "Temperature Critical": "Température critique",
-    "Oxygen Level Low": "Niveau d'oxygène bas",
-    "Battery Warning": "Avertissement de batterie",
-    "Flow Rate Issue": "Problème de débit",
-    "Glucose Levels": "Niveaux de glucose",
-    "Heart Rate": "Fréquence cardiaque",
-    "Blood Pressure": "Pression artérielle",
-    "HDL": "Cholestérol HDL",
-    "LDL": "Cholestérol LDL",
-    "Triglycerides": "Triglycérides",
-    "Blood Sugar": "Glycémie"
+  "stepWidget": {
+    "analyze": "Analyser",
+    "analyzeDescription": "Nous analysons vos données de santé",
+    "discover": "Découvrir",
+    "discoverDescription": "Découvrez vos informations de santé",
+    "optimize": "Optimiser",
+    "optimizeDescription": "Obtenez des recommandations personnalisées"
   },
-  "tests": {
-    "Safety Test": "Test de sécurité",
-    "Load Test": "Test de charge",
-    "System Check": "Vérification du système",
-    "Diagnostic": "Diagnostic",
-    "Blood Test": "Analyse de sang",
-    "Stress Test": "Test d'effort",
-    "Physical Exam": "Examen physique",
-    "Periodic Check": "Vérification périodique"
+  "common": {
+    "loading": "Chargement...",
+    "viewMore": "Voir plus",
+    "viewLess": "Voir moins",
+    "levelAlt": "Indicateur de niveau",
+    "divider": "/",
+    "dayAbbreviations": {
+      "monday": "L",
+      "tuesday": "M",
+      "wednesday": "M",
+      "thursday": "J",
+      "friday": "V",
+      "saturday": "S",
+      "sunday": "D"
+    },
+    "collapse": "Réduire",
+    "expand": "Développer"
   },
   "descriptions": {
-    "Pressure Too High": "La pression du système a dépassé les limites de fonctionnement sécuritaires. Inspection immédiate requise.",
-    "Temperature Critical": "Les relevés de température approchent du seuil critique. Le système de refroidissement peut nécessiter une maintenance.",
-    "Oxygen Level Low": "Le niveau d'oxygène est tombé en dessous du seuil acceptable. Vérifiez les capteurs et l'alimentation.",
-    "Battery Warning": "La batterie fonctionne en dessous de la capacité optimale. Envisagez un remplacement prochainement.",
-    "Flow Rate Issue": "Le débit est irrégulier. Vérifiez les obstructions dans le système.",
-    "Glucose Levels": "Les niveaux de glucose sont en dehors de la plage normale. Ajustement du traitement recommandé.",
-    "Heart Rate": "La fréquence cardiaque présente des irrégularités. Surveillance continue recommandée.",
-    "Blood Pressure": "La pression artérielle est élevée. Consultation médicale recommandée.",
-    "HDL": "Le niveau de bon cholestérol est bas. Recommandation d'améliorer l'alimentation.",
-    "LDL": "Le niveau de mauvais cholestérol est élevé. Suivi médical conseillé."
+    "VLDL": "VLDL signifie lipoprotéine de très basse densité, un type de graisse dans votre sang qui peut contribuer à l'accumulation de plaque dans vos artères.",
+    "LDL": "Le LDL (lipoprotéine de basse densité) est souvent appelé 'mauvais' cholestérol car il apporte du cholestérol aux tissus et peut s'accumuler dans les parois de vos artères.",
+    "HDL": "Le HDL (lipoprotéine de haute densité) est connu comme le 'bon' cholestérol car il aide à éliminer d'autres formes de cholestérol de votre circulation sanguine."
   },
-  "widgets": {
-    "age": "Âge du système",
-    "tracker": "Suivi",
-    "concerns": "Problèmes",
-    "system": "Détails du système"
+  "goalProgressMenu": {
+    "todaysGoals": "Objectifs du jour",
+    "editGoals": "Modifier les objectifs"
   },
-  "categories": {
-    "total": "Total",
-    "mechanical": "Mécanique",
-    "electrical": "Électrique",
-    "hydraulic": "Hydraulique",
-    "software": "Logiciel"
-  },
-  "time": {
-    "today": "Aujourd'hui",
-    "yesterday": "Hier",
-    "daysAgo": "il y a {{count}} jours"
+  "goals": {
+    "1": {
+      "text": "Manger 3 légumes et 2 fruits",
+      "stats": "3 / 5"
+    },
+    "2": {
+      "text": "Marcher 10 000 pas",
+      "stats": "5 468 / 10 000"
+    },
+    "3": {
+      "text": "Méditer pendant 10 minutes",
+      "stats": "0 / 10 min"
+    },
+    "4": {
+      "text": "Boire 8 verres d'eau",
+      "stats": "4 / 8"
+    },
+    "5": {
+      "text": "Dormir 8 heures",
+      "stats": "6,5 / 8 h"
+    },
+    "6": {
+      "text": "Faire de l'exercice pendant 30 minutes",
+      "stats": "0 / 30 min"
+    }
   }
 }

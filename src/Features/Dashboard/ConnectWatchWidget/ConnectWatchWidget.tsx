@@ -1,8 +1,11 @@
 import Heart from "@/assets/ConnectWatchWidget/Heart.svg?react";
 import ConnectIcon from "@/assets/ConnectWatchWidget/ConnectIcon.svg?react";
 import styles from "./ConnectWatchWidget.module.scss";
+import { useTranslation } from 'react-i18next';
 
 export const ConnectWatchWidget = () => {
+	const { t } = useTranslation();
+
 	return (
 		<div className={styles["ConnectWatchWidget-container"]}>
 			<div className={styles["ConnectWatchWidget-left"]}>
@@ -10,12 +13,12 @@ export const ConnectWatchWidget = () => {
 					<Heart />
 				</div>
 				<div className={styles["ConnectWatchWidget-title"]}>
-					Find your health data in one place
+					{t('connectWatchWidget.findHealthData')}
 				</div>
 			</div>
 			<button className={styles["ConnectWatchWidget-button"]}>
 				<div className={styles["ConnectWatchWidget-button-text"]}>
-					Connect to Apple Health
+					{t('connectWatchWidget.connectToAppleHealth')}
 				</div>
 				<div className={styles["ConnectWatchWidget-button-icon-container"]}>
 					<ConnectIcon />

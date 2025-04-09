@@ -1,23 +1,27 @@
 import React from "react";
 import BellIcon from "@assets/Navbar/Icons/profile.svg?react";
 import styles from "./Profile.module.scss";
+import { useTranslation } from "react-i18next";
 
 interface ProfileProps {
-	// onClick: () => void;
 	disabled?: boolean;
 }
 
 const Profile: React.FC<ProfileProps> = ({
-	// onClick,
 	disabled = false,
-}) => (
-	<button
-		className={styles["notification-button"]}
-		onClick={() => console.log("open profile")}
-		disabled={disabled}
-	>
-		<BellIcon />
-	</button>
-);
+}) => {
+	const { t } = useTranslation();
+	
+	return (
+		<button
+			className={styles["notification-button"]}
+			onClick={() => console.log("open profile")}
+			disabled={disabled}
+			aria-label={t('navbar.profile', 'Profile')}
+		>
+			<BellIcon />
+		</button>
+	);
+};
 
 export default Profile;

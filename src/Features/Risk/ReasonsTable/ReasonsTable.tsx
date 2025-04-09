@@ -1,58 +1,69 @@
 import { useState } from "react";
 import styles from "./ReasonsTable.module.scss";
+import { useTranslation } from "react-i18next";
 
-import Chevron from "@assets/ConcernWidget/Chevron.svg?react";
-import {
-	Reason,
-	Symptoms,
-} from "@/Features/Dashboard/ConcernsWidget/helpers/detailedSystemConcerns";
-import { ReasonRow } from "@/Features/Dashboard/ConcernsWidget/Components/ReasonRow/ReasonRow";
-
-interface ReasonsTableProps {
-	reasons: Reason[];
-	symptoms?: Symptoms;
+interface Reason {
+  id: string;
+  icon?: string;
+  title: string;
+  description: string;
+  factors: string[];
 }
 
-export const ReasonsTable: React.FC<ReasonsTableProps> = ({
-	reasons,
-	symptoms,
-}) => {
-	const [isShowMore, setIsShowMore] = useState(false);
+interface ReasonsTableProps {
+  reasons: Reason[];
+  maxVisible?: number;
+}
 
-	const reasonsToShow = isShowMore ? reasons : reasons.slice(0, 3);
+export const ReasonsTable = ({
+  reasons,
+  maxVisible = 3,
+}: ReasonsTableProps) => {
+  const { t } = useTranslation();
+  const [isExpanded, setIsExpanded] = useState(false);
 
-	return (
-		<div className={styles["ReasonsTable-container"]}>
-			<div className={styles["ReasonsTable-head"]}>
-				<div className={styles["header"]}>
-					<div className={styles["ReasonsTable-title"]}>
-						How we know this <span>8</span>
-					</div>
-					<div
-						className={styles["ReasonsTable-more"]}
-						onClick={() => setIsShowMore((prev) => !prev)}
-					>
-						<p className={styles["ReasonsTable-more-text"]}>
-							{isShowMore ? "Show less" : `Show ${reasons.length - 3} more`}
-						</p>
-						<div className={styles["ReasonsTable-chevron-container"]}>
-							<Chevron
-								className={`${styles["ReasonsTable-chevron"]} ${
-									isShowMore ? styles["rotate-chevron"] : ""
-								}`}
-							/>
-						</div>
-					</div>
-				</div>
-				<div className={styles["ReasonsTable-desc"]}>
-					{symptoms?.description}
-				</div>
-			</div>
-			<div className={styles["ReasonsTable-table"]}>
-				{reasonsToShow.map((reason) => (
-					<ReasonRow reason={reason} key={reason.id} />
-				))}
-			</div>
-		</div>
-	);
+  const visibleReasons = isExpanded ? reasons : reasons.slice(0, maxVisible);
+  const hasMore = reasons.length > maxVisible;
+
+  return (
+    <div className={styles["reasons-table"]}>
+      {visibleReasons.map((reason) => (
+        <div key={reason.id} className={styles["reason-row"]}>
+          {reason.icon && (
+            <div className={styles["reason-icon"]}>
+              <img src={reason.icon} alt={t(`reasons.${reason.id}.iconAlt`, `${reason.title} icon`)} />
+            </div>
+          )}
+          <div className={styles["reason-content"]}>
+            <div className={styles["reason-title"]}>
+              {t(`reasons.${reason.id}.title`, reason.title)}
+            </div>
+            <div className={styles["reason-description"]}>
+              {t(`reasons.${reason.id}.description`, reason.description)}
+            </div>
+            <div className={styles["reason-factors"]}>
+              {reason.factors.map((factor, index) => (
+                <div key={index} className={styles["reason-factor"]}>
+                  {t(`reasons.${reason.id}.factors.${index}`, factor)}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {hasMore && (
+        <div className={styles["show-more-container"]}>
+          <button
+            className={styles["show-more-button"]}
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded 
+              ? t('common.viewLess', 'Show less') 
+              : t('common.showMore', 'Show more', { count: reasons.length - maxVisible })}
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };

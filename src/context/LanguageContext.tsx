@@ -1,6 +1,6 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import i18n from '../i18n/i18n';
+import { changeLanguage as i18nChangeLanguage } from '../i18n/i18n';
 
 type LanguageType = 'en' | 'fr';
 
@@ -18,28 +18,34 @@ export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ childr
   });
 
   useEffect(() => {
-    // Set initial language
-    i18n.changeLanguage(language);
-    
-    // Listen for language changes from other components
-    const handleLanguageChanged = () => {
-      const currentLang = i18n.language.startsWith('en') ? 'en' : 'fr';
+    // Set initial language from localStorage
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    } else {
+      // If no saved language, use the current i18n language or default to 'en'
+      const currentLang = i18n.language.substring(0, 2) === 'fr' ? 'fr' : 'en';
       setLanguage(currentLang as LanguageType);
+    }
+
+    // Listen for language changes from i18n
+    const handleLanguageChanged = (lng: string) => {
+      const currentLang = lng.substring(0, 2) === 'fr' ? 'fr' : 'en';
+      setLanguage(currentLang as LanguageType);
+      document.documentElement.lang = currentLang;
     };
-    
+
     i18n.on('languageChanged', handleLanguageChanged);
-    
+
     return () => {
       i18n.off('languageChanged', handleLanguageChanged);
     };
   }, []);
 
   const handleChangeLanguage = (lang: LanguageType) => {
-    localStorage.setItem('language', lang);
-    i18n.changeLanguage(lang).then(() => {
+    // Use the exported changeLanguage function which handles localStorage
+    i18nChangeLanguage(lang).then(() => {
       setLanguage(lang);
-      document.documentElement.lang = lang;
-      window.dispatchEvent(new Event('languageChanged'));
     });
   };
 

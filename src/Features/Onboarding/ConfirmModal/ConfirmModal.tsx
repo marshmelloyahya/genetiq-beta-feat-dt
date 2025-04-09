@@ -3,58 +3,60 @@ import FrameIcon from "@assets/General/Frame.svg?react";
 import ArrowRightIcon from "@assets/General/ArrowRight.svg?react";
 import CloseIcon from "@assets/General/Close.svg?react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ConfirmModalProps {
-	onClose: () => void;
-	onConfirm: () => void;
+ onClose: () => void;
+ onConfirm: () => void;
 }
 
 export const ConfirmModal: React.FC<ConfirmModalProps> = ({
-	onClose,
-	onConfirm,
+ onClose,
+ onConfirm,
 }) => {
-	const [checked, setChecked] = useState(false);
-	return (
-		<div className={styles["process-modal-container"]}>
-			<div className={styles["modal-body"]}>
-				<div className={styles["modal-header"]}>
-					<div className={styles["background-image"]} />
-					<FrameIcon style={{ zIndex: 10 }} />
-				</div>
-				<div className={styles["modal-content"]}>
-					<div className={styles["modal-title"]}>
-						Ready to process your healthcare data and{" "}
-						<span className={styles["modal-title-emphasize"]}>
-							generate your GenetiQ Digital Twin
-						</span>
-					</div>
-					<div className={styles["modal-description"]}>
-						This proceed should only take a few minutes. We will notify you by
-						email when the process is complete.
-					</div>
-				</div>
-				<div className={styles["modal-policy"]}>
-					<input
-						type='checkbox'
-						className={styles["modal-policy-checkbox"]}
-						onClick={() => setChecked(!checked)}
-					/>
-					<div>
-						I read and agree to Terms and Conditions and Privacy Policy.
-					</div>
-				</div>
-				<div className={styles["modal-footer"]}>
-					<button className={styles["cancel"]} onClick={onClose}>
-						Cancel <CloseIcon />
-					</button>
-					<button
-						className={`${styles["confirm"]} ${checked === false ? styles["confirm-disabled"] : ""}`}
-						onClick={onConfirm}
-					>
-						Confirm <ArrowRightIcon />
-					</button>
-				</div>
-			</div>
-		</div>
-	);
+ const { t } = useTranslation();
+ const [checked, setChecked] = useState(false);
+ 
+ return (
+  <div className={styles["process-modal-container"]}>
+   <div className={styles["modal-body"]}>
+    <div className={styles["modal-header"]}>
+     <div className={styles["background-image"]} />
+     <FrameIcon style={{ zIndex: 10 }} />
+    </div>
+    <div className={styles["modal-content"]}>
+     <div className={styles["modal-title"]}>
+      {t('confirmModal.readyToProcess')}{" "}
+      <span className={styles["modal-title-emphasize"]}>
+       {t('confirmModal.generateTwin')}
+      </span>
+     </div>
+     <div className={styles["modal-description"]}>
+      {t('confirmModal.processDescription')}
+     </div>
+    </div>
+    <div className={styles["modal-policy"]}>
+     <input
+      type="checkbox"
+      className={styles["modal-policy-checkbox"]}
+      onClick={() => setChecked(!checked)}
+     />
+     <div>
+      {t('confirmModal.agreeToTerms')}
+     </div>
+    </div>
+    <div className={styles["modal-footer"]}>
+     <button className={styles["cancel"]} onClick={onClose}>
+      {t('common.cancel')} <CloseIcon />
+     </button>
+     <button
+      className={`${styles["confirm"]} ${checked === false ? styles["confirm-disabled"] : ""}`}
+      onClick={onConfirm}
+     >
+      {t('common.confirm')} <ArrowRightIcon />
+     </button>
+    </div>
+   </div>
+  </div>
+ );
 };

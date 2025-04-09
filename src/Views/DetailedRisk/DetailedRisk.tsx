@@ -5,13 +5,13 @@ import styles from "./DetailedRisk.module.scss";
 import { CameraProvider } from "@/Features/DigitalTwin/Context/CameraContext";
 import RiskHeader from "@/Features/Risk/RiskHeader/RiskHeader";
 import { RiskStatus } from "@/Features/Risk/RiskStatus/RiskStatus";
-// import { AgeWidget } from "@/Features/Risk/AgeWidget/AgeWidget";
 import { detailedSystemConcerns } from "@/Features/Dashboard/ConcernsWidget/helpers/detailedSystemConcerns";
 import { PlanWidget } from "@/Features/Dashboard/PlanWidget/PlanWidget";
 import GoalsProgressMenu from "@/Features/Risk/GoalProgressMenu/GoalProgressMenu";
 import { ReasonsTable } from "@/Features/Risk/ReasonsTable/ReasonsTable";
 import Logo from "@assets/General/IconGenetiq.svg?react";
 import { Symptoms } from "@/Features/Risk/Symptoms/Symptoms";
+import { useTranslation } from "react-i18next";
 
 function toTitleCase(str: string): string {
 	return str
@@ -25,6 +25,7 @@ function toTitleCase(str: string): string {
 const DetailedRisk = () => {
 	const { systemName, riskName } = useParams();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const { t } = useTranslation();
 
 	const formattedName = riskName ? toTitleCase(riskName) : "";
 
@@ -63,16 +64,12 @@ const DetailedRisk = () => {
 						<div className={styles["DetailerRisk-age"]}>
 							<div className={styles["DetailerRisk-age-content"]}>
 								<div className={styles["DetailerRisk-age-content-title"]}>
-									What your age tells about your health
+									{t('detailedRisk.ageHealthTitle', 'What your age tells about your health')}
 								</div>
 								<div className={styles["DetailerRisk-age-content-desc"]}>
-									A younger cardiovascular age can indicate better heart health
-									and potentially lower your risk of complications from AFib,
-									making it essential to focus on heart health measures tailored
-									to your condition.
+									{t('detailedRisk.ageHealthDescription', 'A younger cardiovascular age can indicate better heart health and potentially lower your risk of complications from AFib, making it essential to focus on heart health measures tailored to your condition.')}
 								</div>
 							</div>
-							{/* <AgeWidget /> remove for now */}
 						</div>
 						<Symptoms
 							description={selectedConcern!.symptoms?.description}
@@ -83,7 +80,7 @@ const DetailedRisk = () => {
 							symptoms={selectedConcern!.symptoms}
 						/>
 						<div className={styles["DetailerRisk-plan"]}>
-							<div className={styles["title"]}>What you can do</div>
+							<div className={styles["title"]}>{t('detailedRisk.whatYouCanDo', 'What you can do')}</div>
 							<PlanWidget
 								backgroundColor='blue'
 								planData={
